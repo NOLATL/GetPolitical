@@ -6,6 +6,35 @@ import os
 from openai import OpenAI
 import pandas as pd
 
+# Load environment variables
+load_dotenv()
+
+# ---------- ACCESS GATE & RESET (LOGOUT) FEATURE ----------
+if "logout" in st.session_state and st.session_state.logout:
+    if "ok" in st.session_state:
+        del st.session_state.ok
+    st.session_state.logout = False
+
+if "ok" not in st.session_state:
+    with st.form("gate"):
+        token = st.text_input("Enter access code", type="password")
+        if st.form_submit_button("Unlock"):
+            # Works in both Community Cloud and local env
+            access_code = None
+            try:
+                if hasattr(st, 'secrets') and len(st.secrets) > 0:
+                    access_code = st.secrets.get("ACCESS_CODE")
+            except Exception:
+                pass
+            if not access_code:
+                access_code = os.environ.get("ACCESS_CODE") or os.getenv("ACCESS_CODE")
+            if token == access_code:
+                st.session_state.ok = True
+                st.rerun()
+            else:
+                st.error("Invalid code")
+    st.stop()
+
 st.markdown("""
     <style>
         #MainMenu {visibility: hidden;}
