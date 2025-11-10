@@ -127,7 +127,7 @@ dependencies:
 
 ## 🔒 Access Control
 This app includes a lightweight access gate to protect deployed apps on public Streamlit Cloud.  
-Users must enter the <letmein123> to unlock the app interface.
+Users must enter "letmein123" to unlock the app interface.
 
 ---
 
