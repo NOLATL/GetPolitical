@@ -1,0 +1,39 @@
+name: congress-bills-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pandas>=2.0
+  - numpy>=1.25
+  - pyarrow>=11.0
+  - fastparquet>=0.8   # optional parquet engine
+  - requests>=2.28
+  - tqdm
+  - duckdb>=0.8        # fast analytical queries, great with parquet
+  - sqlalchemy
+  - jupyterlab
+  - notebook
+  - ipykernel
+  - nb_conda_kernels   # makes the conda env visible to Jupyter
+  - matplotlib
+  - seaborn
+  - plotly
+  - altair
+  - bokeh
+  - panel             # for Panel dashboards
+  - streamlit         # for Streamlit apps
+  - voila             # turn notebooks into dashboards
+  - black             # code formatting (optional)
+  - python-dotenv     # for local .env secrets (API keys)
+  - pip
+  - pip:
+    - openai>=1.0.0
+    - streamlit-aggrid  # optional interactive table for streamlit
+    - dash              # if you want Dash apps instead of Streamlit
+    - uvicorn           # useful for running ASGI backends if needed
+    - pydeck
+    - mito-ai==0.1.45
+    - mito_ai==0.1.45   # Mito sometimes publishes both hyphen and underscore variants
+    - mitosheet==0.2.44
+    - mitosheet-helper-pro==0.0.3
