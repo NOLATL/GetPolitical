@@ -2,7 +2,7 @@
 # 🏛️ Get Political. Take Action.
 **An interactive Streamlit app for exploring Congressional activity, analyzing bills, and contacting your representatives — powered by the U.S. Congress API and OpenAI.**
 
-🌐 **Live App:** [https://getpolitical.streamlit.app/](https://getpolitical.streamlit.app/)
+🌐 **Live App:** [https://getpolitical.streamlit.app/](https://getpolitical.streamlit.app/) (access code: letmein123)
 
 ---
 
